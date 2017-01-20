@@ -1,0 +1,14 @@
+How to create a connexion between the leboncoin and meilleursagents?
+
+
+-> The user searches an appartement on leboncoin website that he would like to comparate,
+-> get and put the url of leboncoin of the appartement in the searchbar of the website that it will be created.
+-> Then, the website displays the photo of the appartement get on the website LebonCoin and all the informations about this appartement (area, country, price,..)
+-> In the center of the website we will have the two prices of leboncoin and meilleursagents in order to comparate the price and display if is a good deal or not.
+-> to have the price of leboncoin we will need to calculate the price mean m²: price / surface
+-> to have the price of meilleursagents we will need to get the country and the zipcode of the appartement of LebonCoin.
+-> if the price from the LebonCoin is lower than the one of meilleursagents, a thumb up will be display that is will represent a good deal.
+-> if the price from the LebonCoin is higher than the one of meilleursagents, a thumb down will be display that is will represent a bad deal.
+
+
+
