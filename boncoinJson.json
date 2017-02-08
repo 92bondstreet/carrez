@@ -1,0 +1,35 @@
+{
+	"title": "JsonBonCoin",
+	"type": "object",
+	"properties": {
+		
+		"price":{
+		"type":"float",
+		"minimum":0
+		},
+		
+		"town": {
+			"type": "string"
+		},
+		
+		"post code": {
+			"type": "int"
+		},
+		
+		"type": {
+			"description": "appartment or house",
+			"type": "string"
+		},
+		
+		"rooms":{
+		"type":"int"
+		},
+		
+		"surface":{
+		"type":"int"
+		}
+		
+	},
+		
+	 "required": ["price", "town"]		
+}
