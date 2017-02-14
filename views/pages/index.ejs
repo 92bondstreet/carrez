@@ -1,0 +1,46 @@
+<% include header %>
+
+<div class="wrap">
+
+  <h2>Found the best deal ? Check it out</h2>
+
+  <form action="/" method="post">
+
+    <div class="input">
+
+      <input name="link" id="link" type="search" placeholder="Enter the link">
+      <input type="submit" value="Go !" class="button">
+    </div>
+
+  </form>
+
+
+  <% if(locals.error) { %>
+
+    <div class="msg"><%= error %></div>
+
+    <% } else if (locals.result) {
+
+          if(result.indexOf("+") == -1) { %>
+
+            <div class="msg"> <span class="negative"><%= result %></span></br></br>
+              <%= propPrice %></br><%= avPrice %>
+            </div>
+
+          <% } else { %>
+
+            <div class="msg"><span class="positive"><%= result %></span></br></br>
+              <%= propPrice %></br><%= avPrice %>
+            </div>
+
+          <% } }%>
+
+
+      
+
+
+</div>
+
+
+
+<% include footer %>
