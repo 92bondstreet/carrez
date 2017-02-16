@@ -1,29 +1,28 @@
-let modLeboncoin = require('./leboncoin')
-let modAgents = require('./agents')
-let express = require('express')
-let app = express()
-let bodyParser = require('body-parser')
+var modLeboncoin = require('./leboncoin'),
+    modAgents = require('./agents'),
+    express = require('express'),
+    app = express(),
+    bodyParser = require('body-parser');
 
 // MOTEUR DE TEMPLATE
 app.set('view engine','ejs')
 
 // MIDDLEWARE
-app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static('public'));
 
 // ROUTES
-app.get('/',(request,response) =>  {
+app.get('/', (request,response) => {
 	response.render('pages/index');
-})
-
+});
 app.post('/',(request,response)=> {
 	let link = request.body.link;
 
 	if( link === undefined || link === '') {
-		response.render('pages/index', {error:'Message vide'})
+		response.render('pages/index', {error:'Message vide'});
 	}
 
-	modLeboncoin.scrap(link,(data1) => {
+	modLeboncoin.scrap( link, (data1) => {
 
 			let result;
 			let city;
@@ -88,18 +87,8 @@ app.post('/',(request,response)=> {
 				result = "Désolé, nous ne traitons pas ce genre d'information"
 			}
 
-			response.render('pages/index',{result,propPrice,avPrice})
-
-
-		})
-
-	})
-})
-
-
-
-
-
-
-
+			response.render('pages/index',{result,propPrice,avPrice});
+		});
+	});
+});
 app.listen(8080);
