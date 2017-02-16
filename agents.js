@@ -3,8 +3,6 @@ var request = require('request'),
     modLeboncoin = require('./leboncoin');
 
 exports.scrap = (url, callback) => {
-
-
 	request(url, (er,resp,body) => {
 	let $             = cheerio.load(body),
 	    avPriceFlat   = $('.small-4.medium-2.columns.prices-summary__cell--median').first().text(),
@@ -17,8 +15,5 @@ exports.scrap = (url, callback) => {
 			house  : $avPriceHouse,
 			}
 			callback(agents)
-	})
-
-
-
+	});
 }
