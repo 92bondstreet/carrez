@@ -19,7 +19,7 @@ app.post('/',(request,response)=> {
 	let link = request.body.link;
 
 	if( link === undefined || link === '') {
-		response.render('pages/index', {error:'Message vide'});
+		response.render('pages/index', {error:'Un problème est survenu. Aucune URL n\'a été indiqué.Veuillez indiquer une adresse url.'});
 	}
 
 	modLeboncoin.scrap( link, (data1) => {
