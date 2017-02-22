@@ -14,6 +14,7 @@ app.use(express.static('public'));
 // ROUTES
 app.get('/', (request,response) => {
 	response.render('pages/index');
+	console.log('Carrez: \n Example to take: \n https://www.leboncoin.fr/ventes_immobilieres/1096652386.htm?ca=12_s');
 });
 app.post('/',(request,response)=> {
 	let link = request.body.link;
