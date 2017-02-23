@@ -1,28 +1,33 @@
 <% include header %>
+
 <div class="container">
-<div class="popup" onclick="openPopUp()">How does it work ?
-  <span class="popuptext" id="myPopup">Just take a Url (valid please), and then enter into the search bar to see the best deal ever</span>
-</div>
-<div class="wrap">
 
   <h2>Found a good deal ? Check it out</h2>
   <form action="/" method="post" class="search">
 
-      <input name="link" id="link" type="search" placeholder="Enter the link">
+      <input name="link" id="link" type="search" placeholder="https://www.leboncoin.fr/ventes_immobilieres/....">
       <button class="button"><i class="fa fa-search" aria-hidden="true"></i></button>
 
   </form>
 </div>
 
 
+
   <% if(locals.error) { %>
-    <script>toast("<%= error %>", "center", 3000, 'error');</script>
+    <div class="msg">
+      <div class="msg-header">
+        Result: </br></br>
+          <span class="negative"><%= error %></span>
+
+      </div>
+  </div>
 
     <% } else if (locals.result) { %>
+
       <div class="msg">
         <div class="msg-header">
-          Result:
-        </div>
+          Result: </br></br>
+
         <%  if(result.indexOf("+") == -1) { %>
 
             <span class="negative"><%= result %></span></br></br>
@@ -35,5 +40,7 @@
 
           <% } %>
         </div>
+    </div>
       <% }%>
+
 <% include footer %>

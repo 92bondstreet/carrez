@@ -24,10 +24,12 @@ app.post('/',(request,response)=> {
     	let link = request.body.link;
 
     	if( link === undefined || link === '') {
-    		response.render('pages/index', {error:'Un problème est survenu. Aucune URL n\'a été indiqué.Veuillez indiquer une adresse url.'});
-    	} else if (link.indexOf('https://www.leboncoin.fr/ventes_immobilieres/') == -1){
-        response.render('pages/index', {error:'Un problème est survenu. Veuillez vérifier que votre URL est correct.'});
-      } else {
+    		response.render('pages/index', {error:'No link detect, please enter a link'});
+    	} else if( link.indexOf('https://www.leboncoin.fr/ventes_immobilieres/') == -1){
+        response.render('pages/index', {error:'Please check if your link is conform ( ex : https://www.leboncoin.fr/ventes_immobilieres/...)'});
+      } else  {
+
+      try {
 
     	modLeboncoin.scrap( link, (data1) => {
 
@@ -75,7 +77,7 @@ app.post('/',(request,response)=> {
     				}
 
     			propPrice = 'Price of the property : '+data1.price+'€';
-    			avPrice = 'Average price in this city : '+price+' €'
+    			avPrice = 'Average price in this city ('+city+') : '+price+' €'
 
     			} else if (data1.type === "Maison") {
 
@@ -84,21 +86,27 @@ app.post('/',(request,response)=> {
 
     				if(diff < 0){
               diff = diff*(-1);
-    					result = diff+'€';
+    					result = '- '+diff+'€';
     				} else {
     					result = '+ '+diff+'€';;
     				}
 
     				propPrice = 'Price of the property : '+data1.price+'€';
-    				avPrice = 'Average price in this city : '+price+' €';
+    				avPrice = 'Average price in this city ('+city+') : '+price+' €';
 
     			} else {
-    				result = "Désolé, nous ne traitons pas ce genre de bien";
+    				result = "Sorry, we do not treat this kind of property";
     			}
 
     			response.render('pages/index',{result,propPrice,avPrice});
     		});
     	});
     }
+
+    catch (error) {
+
+      response.render('pages/index', {error:'Please enter a link'});
+    }
+}
     });
 app.listen(8080);
