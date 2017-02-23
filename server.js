@@ -26,7 +26,7 @@ app.post('/',(request,response)=> {
     	if( link === undefined || link === '') {
     		response.render('pages/index', {error:'Un problème est survenu. Aucune URL n\'a été indiqué.Veuillez indiquer une adresse url.'});
     	} else if (link.indexOf('https://www.leboncoin.fr/ventes_immobilieres/') == -1){
-        response.render('pages/index', {error:'Un problème est survenu. Veuillez vérifier que votre URL est correct ( ex : https://www.leboncoin.fr/ventes_immobilieres/1089480815.htm?ca=12_s).'});
+        response.render('pages/index', {error:'Un problème est survenu. Veuillez vérifier que votre URL est correct.'});
       } else {
 
     	modLeboncoin.scrap( link, (data1) => {

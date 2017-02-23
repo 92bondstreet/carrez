@@ -10,6 +10,7 @@
   z-index: 99999;
   transition: transform .25s, opacity .25s, top .25s;
   box-sizing: border-box;
+  text-overflow:ellipsis;
 }
 
 .native-toast-bottom {
@@ -118,8 +119,8 @@
   /* The actual popup (appears on top) */
   .popup .popuptext {
       visibility: hidden;
-      width: 160px;
-      background-color: #555;
+      width: 250px;
+      background-color: #1FCE6D;
       color: #fff;
       text-align: center;
       border-radius: 6px;
@@ -139,7 +140,7 @@
       margin-left: -5px;
       border-width: 5px;
       border-style: solid;
-      border-color: #555 transparent transparent transparent;
+      border-color: #1FCE6D transparent transparent transparent;
   }
 
   .popup .show {
