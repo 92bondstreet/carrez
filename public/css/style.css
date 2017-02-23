@@ -14,6 +14,8 @@ body {
 	flex-direction: column;
   margin-top: 100px;
   text-align: center;
+  animation: opacityPlus;
+  animation-duration: 2s;
 }
 
 #link {
@@ -89,4 +91,14 @@ h2 {
   color:white;
   transition:0.7;
   cursor: pointer;
+}
+
+@keyframes opacityPlus {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+
 }
