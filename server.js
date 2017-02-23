@@ -17,10 +17,10 @@ app.get('/', (request,response) => {
 	response.render('pages/index');
 	console.log('Carrez: \n Example to take: \n https://www.leboncoin.fr/ventes_immobilieres/1096652386.htm?ca=12_s');
 });
-app.post('/',(request,response)=> {
-	let link = request.body.link;
 
-    app.post('/',(request,response)=> {
+
+
+app.post('/',(request,response)=> {
     	let link = request.body.link;
 
     	if( link === undefined || link === '') {
@@ -101,4 +101,4 @@ app.post('/',(request,response)=> {
     	});
     }
     });
-    app.listen(8080);
+app.listen(8080);
