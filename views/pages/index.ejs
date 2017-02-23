@@ -1,36 +1,35 @@
 <% include header %>
-<div class="wrap">
+<div class="container">
 
-  <h2>Found the best deal ? Check it out</h2>
-
-  <form action="/" method="post">
-
-    <div class="input">
+  <h2>Found a good deal ? Check it out</h2>
+  <form action="/" method="post" class="search">
 
       <input name="link" id="link" type="search" placeholder="Enter the link">
-      <input type="submit" value="Go !" class="button">
-    </div>
+      <button class="button"><i class="fa fa-search" aria-hidden="true"></i></button>
 
   </form>
+</div>
 
 
   <% if(locals.error) { %>
-    <script>toast("<%= error %>", "top", 3000, 'error');</script>
+    <div class="msg">
+    <span class="negative"><%= error %></span>
 
-    <% } else if (locals.result) {
+</div>
+    <% } else if (locals.result) { %>
+      <div class="msg">
 
-          if(result.indexOf("+") == -1) { %>
+        <%  if(result.indexOf("+") == -1) { %>
 
-            <div class="msg"> <span class="negative"><%= result %></span></br></br>
+            <span class="negative"><%= result %></span></br></br>
               <%= propPrice %></br><%= avPrice %>
-            </div>
 
           <% } else { %>
 
-            <div class="msg"><span class="positive"><%= result %></span></br></br>
+            <span class="positive"><%= result %></span></br></br>
               <%= propPrice %></br><%= avPrice %>
-            </div>
 
-          <% } }%>
-</div>
+          <% } %>
+        </div>
+      <% }%>
 <% include footer %>
