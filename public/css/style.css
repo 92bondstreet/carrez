@@ -93,7 +93,7 @@ h2 {
 .footer-carrez {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: flex-end;
   align-items: center;
   height: 60px;
   border-top:1px solid #262c35;
@@ -104,12 +104,13 @@ h2 {
   left: 0;
 }
 
-.footer-carrez>h4 {
+.footer-carrez>a {
   color:grey;
   font-size: 20px;
+  padding: 2%;
 }
 
-.footer-carrez>h4:hover {
+.footer-carrez>a:hover {
   color:white;
   transition:0.7;
   cursor: pointer;
