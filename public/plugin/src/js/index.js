@@ -18,7 +18,7 @@ function Toast(message, position, timeout, type) {
     this.type = '';
     this.debug = false;
     this.edge = false;
-  
+
     if (prevToast) {
       destroy(prevToast);
     }
@@ -84,3 +84,8 @@ function toast(message, position, timeout, type) {
       }
     }, 300)
   }
+
+function openPopUp() {
+    var popup = document.getElementById("myPopup");
+    popup.classList.toggle("show");
+}
