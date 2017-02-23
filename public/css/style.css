@@ -10,8 +10,14 @@ body {
 
 .container {
   margin-top: 100px;
+<<<<<<< HEAD
   display: flex;
   flex-direction: column;
+=======
+  text-align: center;
+  animation: opacityPlus;
+  animation-duration: 2s;
+>>>>>>> fadb9f09911c10bb174e66d8d36818c37facb597
 }
 
 #link {
@@ -100,3 +106,16 @@ h2 {
   transition:0.7;
   cursor: pointer;
 }
+<<<<<<< HEAD
+=======
+
+@keyframes opacityPlus {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+
+}
+>>>>>>> fadb9f09911c10bb174e66d8d36818c37facb597

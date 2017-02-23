@@ -1,5 +1,12 @@
 <% include header %>
+<<<<<<< HEAD
 <div class="container">
+=======
+<div class="popup" onclick="myFunction()">Click me!
+  <span class="popuptext" id="myPopup">How does it work ?</span>
+</div>
+<div class="wrap">
+>>>>>>> fadb9f09911c10bb174e66d8d36818c37facb597
 
   <h2>Found a good deal ? Check it out</h2>
   <form action="/" method="post" class="search">
@@ -12,8 +19,12 @@
 
 
   <% if(locals.error) { %>
+<<<<<<< HEAD
     <div class="msg">
     <span class="negative"><%= error %></span>
+=======
+    <script>toast("<%= error %>", "center", 3000, 'error');</script>
+>>>>>>> fadb9f09911c10bb174e66d8d36818c37facb597
 
 </div>
     <% } else if (locals.result) { %>

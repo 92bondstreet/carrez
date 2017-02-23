@@ -1,20 +1,24 @@
-      var modLeboncoin = require('./leboncoin'),
+var modLeboncoin = require('./leboncoin'),
         modAgents = require('./agents'),
         express = require('express'),
         app = express(),
         bodyParser = require('body-parser');
 
-    // MOTEUR DE TEMPLATE
-    app.set('view engine','ejs');
+// MOTEUR DE TEMPLATE
+app.set('view engine','ejs');
 
-    // MIDDLEWARE
-    app.use(bodyParser.urlencoded({extended: false}));
-    app.use(express.static('public'));
+// MIDDLEWARE
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(express.static('public'));
 
-    // ROUTES
-    app.get('/', (request,response) => {
-    	response.render('pages/index');
-    });
+
+// ROUTES
+app.get('/', (request,response) => {
+	response.render('pages/index');
+	console.log('Carrez: \n Example to take: \n https://www.leboncoin.fr/ventes_immobilieres/1096652386.htm?ca=12_s');
+});
+app.post('/',(request,response)=> {
+	let link = request.body.link;
 
     app.post('/',(request,response)=> {
     	let link = request.body.link;
