@@ -1,39 +1,46 @@
 <% include header %>
+<<<<<<< HEAD
+<div class="container">
+=======
 <div class="popup" onclick="myFunction()">Click me!
   <span class="popuptext" id="myPopup">How does it work ?</span>
 </div>
 <div class="wrap">
+>>>>>>> fadb9f09911c10bb174e66d8d36818c37facb597
 
-  <h2>Found the best deal ? Check it out</h2>
-
-  <form action="/" method="post">
-
-    <div class="input">
+  <h2>Found a good deal ? Check it out</h2>
+  <form action="/" method="post" class="search">
 
       <input name="link" id="link" type="search" placeholder="Enter the link">
-      <input type="submit" value="Go !" class="button">
-    </div>
+      <button class="button"><i class="fa fa-search" aria-hidden="true"></i></button>
 
   </form>
+</div>
 
 
   <% if(locals.error) { %>
+<<<<<<< HEAD
+    <div class="msg">
+    <span class="negative"><%= error %></span>
+=======
     <script>toast("<%= error %>", "center", 3000, 'error');</script>
+>>>>>>> fadb9f09911c10bb174e66d8d36818c37facb597
 
-    <% } else if (locals.result) {
+</div>
+    <% } else if (locals.result) { %>
+      <div class="msg">
 
-          if(result.indexOf("+") == -1) { %>
+        <%  if(result.indexOf("+") == -1) { %>
 
-            <div class="msg"> <span class="negative"><%= result %></span></br></br>
+            <span class="negative"><%= result %></span></br></br>
               <%= propPrice %></br><%= avPrice %>
-            </div>
 
           <% } else { %>
 
-            <div class="msg"><span class="positive"><%= result %></span></br></br>
+            <span class="positive"><%= result %></span></br></br>
               <%= propPrice %></br><%= avPrice %>
-            </div>
 
-          <% } }%>
-</div>
+          <% } %>
+        </div>
+      <% }%>
 <% include footer %>
