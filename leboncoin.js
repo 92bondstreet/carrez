@@ -38,10 +38,6 @@ exports.scrap = (url,callback) => {
 			});
 
 
-			//let surface = $('.value');
-			//let $surface = parseInt(surface[5].children[0].data);
-
-
 			leboncoin = {
 				price : $price,
 				address : $address,
@@ -49,7 +45,7 @@ exports.scrap = (url,callback) => {
 				surface : $surface
 			}
 
-			
+
 
 			callback(leboncoin)
 

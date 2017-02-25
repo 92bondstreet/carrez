@@ -60,7 +60,7 @@ app.post('/',(request,response)=> {
 
     				}
 
-    				urlAgent = "https://www.meilleursagents.com/prix-immobilier/"+city+"-"+code;
+    				urlAgent = `https://www.meilleursagents.com/prix-immobilier/${city}-${code}`;
 
     		modAgents.scrap(urlAgent,(data2) => {
 
@@ -71,13 +71,13 @@ app.post('/',(request,response)=> {
 
     				if(diff < 0){
               diff = diff*(-1);
-    					result = '- '+diff+'€';
+    					result = `- ${diff} €`;
     				} else {
-    					result = '+ '+diff+'€';
+              result = `+ ${diff} €`;
     				}
 
-    			propPrice = 'Price of the property : '+data1.price+'€';
-    			avPrice = 'Average price in this city ('+city+') : '+price+' €'
+    			propPrice = `Price of the property : ${data1.price} €`;
+    			avPrice = `Average price in this city (${city}) : ${price} €`
 
     			} else if (data1.type === "Maison") {
 
@@ -86,13 +86,13 @@ app.post('/',(request,response)=> {
 
     				if(diff < 0){
               diff = diff*(-1);
-    					result = '- '+diff+'€';
+              result = `- ${diff} €`;
     				} else {
-    					result = '+ '+diff+'€';;
+              result = `+ ${diff} €`;
     				}
 
-    				propPrice = 'Price of the property : '+data1.price+'€';
-    				avPrice = 'Average price in this city ('+city+') : '+price+' €';
+            propPrice = `Price of the property : ${data1.price} €`;
+            avPrice = `Average price in this city (${city}) : ${price} €`
 
     			} else {
     				result = "Sorry, we do not treat this kind of property";
