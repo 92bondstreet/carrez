@@ -1,0 +1,45 @@
+<% include header %>
+
+<div class="container">
+
+  <h2>Found a good deal ? Check it out</h2>
+  <form action="/" method="post" class="search">
+
+      <input name="link" id="link" type="search" placeholder="https://www.leboncoin.fr/ventes_immobilieres/....">
+      <button class="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+
+  </form>
+</div>
+
+
+  <% if(locals.error) { %>
+    <div class="msg">
+      <div class="msg-header">
+        Result: </br></br>
+          <span class="negative"><%= error %></span>
+
+      </div>
+  </div>
+
+    <% } else if (locals.result) { %>
+
+      <div class="msg">
+        <div class="msg-header">
+          Result: </br></br>
+
+        <%  if(result.indexOf("+") == -1) { %>
+
+            <span class="negative"><%= result %></span></br></br>
+              <%= propPrice %></br><%= avPrice %>
+
+          <% } else { %>
+
+            <span class="positive"><%= result %></span></br></br>
+              <%= propPrice %></br><%= avPrice %>
+
+          <% } %>
+        </div>
+    </div>
+      <% }%>
+
+<% include footer %>

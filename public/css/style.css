@@ -1,0 +1,143 @@
+
+body {
+  background: #2E3740;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  display: flex;
+	flex-direction: column;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 80px;
+
+}
+
+#link {
+  width:450px;
+  height: 50px;
+  padding-left: 10px;
+  opacity: 0.7;
+  border:0;
+  border-radius: 7px 0px 0px 7px;
+
+}
+
+.button {
+  width :100px;
+  background: #1FCE6D;
+  border: 0;
+  height: 50px;
+  border-radius: 0px 7px 7px 0;
+}
+
+.button:hover {
+  background-color: #1BAD58;
+}
+
+
+.msg {
+  margin:0 auto;
+  margin-top: 100px;
+  width:400px;
+  height: 150px;
+  padding-top: 30px;
+  text-align: center;
+  background-color:#2d3a46;
+  border-radius: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.34);
+  transition: .7s;
+  animation: opacityPlus;
+  animation-duration: 2s;
+}
+
+.msg:hover {
+  transition: .7s;
+  box-shadow:8px 8px 50px rgba(0, 0, 0, 0.34);
+  margin-bottom: 5%;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+
+.negative {
+  color: #FF4C5B;
+  margin-top: 100px;
+
+}
+
+.positive {
+  color: #1FCE6D;
+}
+
+h2 {
+  color: #6D7781;
+  font-family: 'Sofia', cursive;
+  font-weight: bold;
+  font-size: 2.6em;
+  text-align: center;
+}
+
+.search {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  margin:0 auto;
+
+}
+
+.search:hover {
+  transition: .7s;
+  box-shadow:0px 0px 50px rgba(0, 0, 0, 0.34);
+}
+
+
+.footer-carrez {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 60px;
+  border-top:1px solid #262c35;
+  background-color: #262c33;
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  left: 0;
+}
+
+.footer-carrez>h4 {
+  color:grey;
+  font-size: 20px;
+}
+
+.footer-carrez>h4:hover {
+  color:white;
+  transition:0.7;
+  cursor: pointer;
+}
+
+.msg-header {
+  position:relative;
+  top:0;
+  right:0;
+  width: 100%;
+  align-self: flex-start;
+  text-align: center;
+  padding-bottom: 10px;
+
+}
+
+@keyframes opacityPlus {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+
+}

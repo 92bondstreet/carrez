@@ -1,0 +1,31 @@
+{
+  "name": "carrez",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.16.0",
+    "cheerio": "^0.22.0",
+    "ejs": "^2.5.5",
+    "express": "^4.14.1",
+    "handlebars": "^4.0.6",
+    "nodemon": "^1.11.0",
+    "path": "^0.12.7",
+    "request": "^2.79.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarcHbb/carrez.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarcHbb/carrez/issues"
+  },
+  "homepage": "https://github.com/MarcHbb/carrez#readme"
+}
